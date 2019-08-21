@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9ar-UE-xJq">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stopwatch-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="StopwatchViewControler" customModule="TimerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJC-Ym-ZGT">
+                                <rect key="frame" x="264" y="264" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Adm-Zp-cIA"/>
+                                    <constraint firstAttribute="width" constant="40" id="NHj-4I-K61"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Start"/>
+                                <state key="selected" title="Stop"/>
+                                <connections>
+                                    <action selector="switchButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="bPc-ge-tjm"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLw-YS-1Ov">
+                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Pv-4J-NbX">
+                                        <rect key="frame" x="118.5" y="82" width="83" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0Pv-4J-NbX" firstAttribute="centerY" secondItem="mLw-YS-1Ov" secondAttribute="centerY" id="EBu-4B-SFG"/>
+                                    <constraint firstItem="0Pv-4J-NbX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mLw-YS-1Ov" secondAttribute="top" constant="16" id="NxZ-1w-khi"/>
+                                    <constraint firstItem="0Pv-4J-NbX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mLw-YS-1Ov" secondAttribute="leading" constant="16" id="crt-vY-tre"/>
+                                    <constraint firstItem="0Pv-4J-NbX" firstAttribute="centerX" secondItem="mLw-YS-1Ov" secondAttribute="centerX" id="gfh-uG-PHJ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0Pv-4J-NbX" secondAttribute="trailing" constant="16" id="hfp-do-FWa"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0Pv-4J-NbX" secondAttribute="bottom" constant="16" id="kqf-e6-FPp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DJC-Ym-ZGT" secondAttribute="trailing" constant="16" id="Gz7-wq-iJm"/>
+                            <constraint firstItem="mLw-YS-1Ov" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IJV-68-EgM"/>
+                            <constraint firstItem="mLw-YS-1Ov" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IcM-h3-2v5"/>
+                            <constraint firstItem="DJC-Ym-ZGT" firstAttribute="top" secondItem="mLw-YS-1Ov" secondAttribute="bottom" id="bRy-Ug-ldd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mLw-YS-1Ov" secondAttribute="trailing" id="e2l-3D-la3"/>
+                            <constraint firstItem="DJC-Ym-ZGT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gJI-zM-Fh6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stopwatch" id="tTr-VC-DaT"/>
+                    <connections>
+                        <outlet property="switchButton" destination="DJC-Ym-ZGT" id="QxH-St-BRt"/>
+                        <outlet property="timeLabel" destination="0Pv-4J-NbX" id="Rpa-1c-wzt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2133.75" y="99.295774647887328"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pef-QB-LBq">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9ar-UE-xJq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cm3-kd-DYY">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dzJ-fP-VFT" kind="relationship" relationship="viewControllers" id="Vsn-Yg-Dh7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K71-hk-R0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.75" y="99.295774647887328"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="IVg-W0-pYo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dzJ-fP-VFT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stopwatch" id="UJq-aD-3nh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dwN-If-lTs">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AbI-vJ-hAD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1kq-ZR-xrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136.25" y="99.295774647887328"/>
+        </scene>
+    </scenes>
+</document>
